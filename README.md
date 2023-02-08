@@ -26,7 +26,7 @@ Chaque ministère est dirigé par un seul administrateur qui gère tous les empl
 Chaque ministère a obligatoirement un département de comptabilité qui va gérer toute transaction financière de son département, ces transactions sont gérées par un seul ministère qui est le ministère de l’économie et la finance
 Chaque transaction est enregistrée dans le ministère concerné et la ministère de l’économie et la finance avec un ID, Nom, Description, Ministère et date
 
-#Travail demandé
+# Travail demandé
 Réaliser un cahier des charges relatif aux exigences demandées par le gouvernement
 Réaliser Un diagramme de classe adéquat
 Réaliser la partie Backend en SpringBoot
