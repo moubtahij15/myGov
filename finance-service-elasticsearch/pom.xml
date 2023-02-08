@@ -9,15 +9,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>finance-service</artifactId>
+    <artifactId>finance-service-elasticsearch</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>finance-service</name>
-    <description>finance-service</description>
+    <name>finance-service-elasticsearch</name>
+    <description>finance-service-elasticsearch</description>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.1</spring-cloud.version>
-
     </properties>
     <dependencies>
 
@@ -114,6 +113,4 @@
             </snapshots>
         </repository>
     </repositories>
-
-
 </project>

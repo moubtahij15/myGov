@@ -1,9 +1,8 @@
 package com.example.tourisme;
 
 import com.example.tourisme.entities.Departement;
-import com.example.tourisme.entities.Minister;
+import com.example.tourisme.helpers.Minister;
 import com.example.tourisme.repository.DepartementRepo;
-import com.example.tourisme.repository.MinisterRepo;
 import com.example.tourisme.repository.TransactionRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -24,22 +23,16 @@ public class TourismeApplication {
 
 
     @Bean
-    CommandLineRunner start(MinisterRepo ministerRepo, DepartementRepo departementRepo, TransactionRepo transactionRepo) {
+    CommandLineRunner start(DepartementRepo departementRepo, TransactionRepo transactionRepo) {
         return args -> {
-            Minister minister=Minister.builder().nom("Minister du tourisme").build();
 
-            System.out.println(minister);
-
-            ministerRepo.save(minister);
-            System.out.println(minister.getId());
 
             departementRepo.saveAll(
                     List.of(
-                            Departement.builder().nom("RH").minister_id(minister.getId()).build(),
-                            Departement.builder().nom("Comptabilité").minister_id(minister.getId()).build()
-
+                            Departement.builder().nom("Rh").minister(Minister.MINISTER).build(),
+                            Departement.builder().nom("Comptabilité").minister(Minister.MINISTER).build()
                     )
-                    );
+            );
 
 
         };

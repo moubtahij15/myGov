@@ -1,16 +1,16 @@
-package com.example.tourisme.entities;
+package com.example.financeserviceelasticsearch.documents;
 
-import com.example.tourisme.helpers.Minister;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.example.financeserviceelasticsearch.helpers.Minister;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.util.Collection;
 
-@Entity
+@Document(indexName = "departement")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,9 +20,9 @@ public class Departement {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String nom;
+
     private String minister= Minister.MINISTER;
 
-    @OneToMany(mappedBy = "departement")
     private Collection<Employé> employés;
 
 

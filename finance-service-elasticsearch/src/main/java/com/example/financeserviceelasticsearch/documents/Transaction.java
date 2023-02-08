@@ -1,17 +1,19 @@
-package com.example.tourisme.entities;
+package com.example.financeserviceelasticsearch.documents;
 
-import com.example.tourisme.helpers.Minister;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
-@Entity
+@Document(indexName = "transaction")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,13 +24,9 @@ public class Transaction {
     private String id;
     private String nom;
     private String description;
-    private String Minister = com.example.tourisme.helpers.Minister.MINISTER;
+    private String Minister = "Minster Du Finance";
     private double mentant;
-    @CreationTimestamp
-    private Timestamp createdAt;
-
-    @UpdateTimestamp
-    private Timestamp updatedAt;
+    private String createdAt = LocalDateTime.now().toString();
 
 
 }

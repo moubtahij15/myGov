@@ -19,11 +19,8 @@ public class Departement {
     private String id;
     private String nom;
 
-    @Column(name = "minister_id", nullable = true)
-    private String minister_id;
-    @ManyToOne
-    @JoinColumn(insertable = false, updatable = false)
-    private Minister minister;
+
+    private String minister;
 
     @OneToMany(mappedBy = "departement")
     private Collection<Employé> employés;
